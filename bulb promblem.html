@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On/Off - Haldia Institute of Technology</title>
+    <style>
+        .bulb {
+            display: block;
+            margin: 50px auto;
+            width: 120px;
+            height: 200px;
+            background: url('https://www.w3schools.com/js/pic_bulboff.gif') no-repeat center;
+            background-size: contain;
+        }
+        .bulb.on {
+            background-image: url('https://www.w3schools.com/js/pic_bulbon.gif');
+        }
+        .container {
+            text-align: center;
+        }
+        .toggle-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .toggle-btn:hover {
+            background-color: #45a049;
+        }
+        .label {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Bulb on/off project - Haldia Institute of Technology -->
+    <div id="bulb" class="bulb"></div>
+    <button id="toggleBtn" class="toggle-btn">Turn On</button>
+    <div class="label" id="status">Bulb is Off</div>
+</div>
+
+<script>
+    const bulb = document.getElementById('bulb');
+    const button = document.getElementById('toggleBtn');
+    const statusLabel = document.getElementById('status');
+
+    let bulbOn = false;
+
+    button.addEventListener('click', function() {
+        bulbOn = !bulbOn;
+        
+        if (bulbOn) {
+            bulb.classList.add('on');
+            button.textContent = 'Turn Off';
+            statusLabel.textContent = 'Bulb is On';
+        } else {
+            bulb.classList.remove('on');
+            button.textContent = 'Turn On';
+            statusLabel.textContent = 'Bulb is Off';
+        }
+    });
+</script>
+
+</body>
+</html>
